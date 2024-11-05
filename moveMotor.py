@@ -6,7 +6,6 @@ from pybricks.parameters import Port, Stop, Direction, Button, Color
 from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
-import time
 
 
 # This program requires LEGO EV3 MicroPython v2.0 or higher.
@@ -23,10 +22,10 @@ pusherMotor = Motor(Port.C)
 
 # Run the push motor at 300 deg/s, until it is stopped
 pusherMotor.run(300)
-time.sleep(1000)
+wait(1000)
 pusherMotor.stop()
 
 # Use a for loop to specify how many times the same code should be run
 for counter in range(6):
     pusherMotor.run_time(300,1000)
-    time.sleep(1000)
+    wait(1000)

@@ -32,3 +32,9 @@ robot.straight(-200)
 # Spin around clockwise and then anti-clockwise
 robot.turn(360)
 robot.turn(-360)
+
+# Using a while loop to move the robot 5m
+robotSteps = 0
+while robotSteps != 5:
+    robot.straight(1000)
+    robotSteps = robotSteps + 1
