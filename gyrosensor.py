@@ -28,10 +28,6 @@ robot = DriveBase(leftWheel, rightWheel, wheel_diameter = 55.5, axel_track=104)
 
 # Write your program here.
 
-# TO DO: Figure out to make gyro work in a way that is remotely usable
-while True:
-    robot.turn(600)
-
-    if gyroSensor.angle() == 360:
-        robot.stop()
-        break
+# While the gyro sensor reads an angle less than 90 degrees, drive forward at 100mm/s at an angle of 10 degrees
+while gyroSensor.angle() < 90: 
+    robot.drive(100, 10) 
